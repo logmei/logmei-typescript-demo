@@ -2,9 +2,10 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": false,//运行any类型
-    "allowJs": true,
+    // "allowJs": true,
     "module": "es6",
-    "target": "es5"
+    "target": "es5",
+    "declaration": true//自动生成声明文件，可以在命令行中添加 --declaration（简写 -d），或者在 tsconfig.json 中添加 declaration 选项
   },
   "exclude": ["node_modules"],
   "include": ["src/*"]
