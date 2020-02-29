@@ -1,16 +1,16 @@
  import { createCloth } from './cloth'
  import { createCanvas } from './createCanvas'
  import { throttle } from './util'
- interface Watermark{
+ interface LogmeiCanvas{
    [key:string]:any
  }
- class Watermark{
+ class LogmeiCanvas{
 
   public target: HTMLElement = document.documentElement;
   public contentText: string = '';
   public width:number;
   public height:number;
-  public id:string = 'fe-waterMark';
+  public id:string = 'logmei';
   public fontSize:string = '10px';
   public color:string = '#cacaca';
   public top:string = '30px';
@@ -33,8 +33,7 @@
   getType(obj:any):string{
     return Object.prototype.toString.call(obj).replace(/^\S+\s+(\S+)\]$/,'$1').toLowerCase()
   }
-  //设置水印
-  setWatermark():void{
+  setCanvas():void{
     // Window.devicePixelRatio = 2
     //创建画布
     const cons = createCloth.call(this)
@@ -42,12 +41,12 @@
   }
   //渲染
   render():void{
-    this.setWatermark()
+    this.setCanvas()
     window.onresize = (event)=>{
       throttle(()=>{
-        this.setWatermark()
+        this.setCanvas()
       },500)
     }  
   }
 }
-export {Watermark}
+export {LogmeiCanvas}

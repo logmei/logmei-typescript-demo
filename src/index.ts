@@ -1,8 +1,6 @@
-import {Watermark} from './watermark';
-// const watermark = new Watermark('logmei');
-// console.log(Watermark)
+import {LogmeiCanvas} from './LogmeiCanvas';
 function load(){
-  const watermark = new Watermark('杨晓妹')
+  const logmei = new LogmeiCanvas('123456')
   const options = {
     fontSize:'16px',
     color:'green',
@@ -12,8 +10,8 @@ function load(){
     opacity:0.7,
     zIndex : 1000,
   }
-  watermark.initOptions(options)
-  watermark.render()
+  logmei.initOptions(options)
+  logmei.render()
 }
 document.body.onload = function(){
   load()
